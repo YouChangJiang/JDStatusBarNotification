@@ -463,6 +463,19 @@
 {
     CGFloat width = MAX(rect.size.width, rect.size.height);
     CGFloat height = MIN(rect.size.width, rect.size.height);
+    
+    width = MAX(rect.size.width, rect.size.height);
+    height = MIN(rect.size.width, rect.size.height);
+    
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    
+    if (width == 0.0) {
+        width = screenBounds.size.width;
+    }
+    
+    if (height == 0.0) {
+        height = 20.0;
+    }
 
     // on ios7 fix position, if statusBar has double height
     CGFloat yPos = 0;
@@ -522,7 +535,13 @@
 }
 
 - (NSUInteger)supportedInterfaceOrientations {
-    return [[self keyWindowRootViewController] supportedInterfaceOrientations];
+    UIViewController *vc = [self keyWindowRootViewController];
+    if (vc == self) {
+        return UIInterfaceOrientationPortrait;
+    } else {
+        return [vc supportedInterfaceOrientations];
+    }
+
 }
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
@@ -534,6 +553,10 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return [[UIApplication sharedApplication] statusBarStyle];
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return [[UIApplication sharedApplication] isStatusBarHidden];
 }
 
 @end
