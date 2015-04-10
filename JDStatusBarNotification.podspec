@@ -1,16 +1,16 @@
 Pod::Spec.new do |s|
   
   s.name         = 'JDStatusBarNotification'
-  s.version      = '1.4.8-glow'
+  s.version      = '1.5.1-glow'
   s.summary      = 'Easy, customizable notifications displayed on top of the statusbar. With progress and activity.'
 
-  s.description  = 'Show messages on top of the status bar. Customizable colors, font and animation. Supports progress display and can show an activity indicator. iOS 7 ready. iOS6 support.'
+  s.description  = 'Show messages on top of the status bar. Customizable colors, font and animation. Supports progress display and can show an activity indicator. iOS 7/8 ready. iOS6 support.'
   
   s.homepage     = 'https://github.com/allenhsu/JDStatusBarNotification'
   s.license      = { :type => 'MIT' }
   s.author       = { 'Markus Emrich' => 'markus@nxtbgthng.com' }  
   
-  s.source       = { :git => 'https://github.com/allenhsu/JDStatusBarNotification.git', :tag => "1.4.8-glow" }
+  s.source       = { :git => 'https://github.com/allenhsu/JDStatusBarNotification.git', :tag => s.version }
   s.source_files = 'JDStatusBarNotification/**'
   s.frameworks   = 'QuartzCore'
   
