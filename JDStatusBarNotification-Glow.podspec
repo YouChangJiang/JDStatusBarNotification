@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/allenhsu/JDStatusBarNotification.git', :tag => s.version.to_s + '-glow' }
   s.source_files = 'JDStatusBarNotification/**'
   s.frameworks   = 'QuartzCore'
+  s.module_name  = 'JDStatusBarNotification'
   
   s.platform     = :ios, '6.0'
   s.requires_arc = true
